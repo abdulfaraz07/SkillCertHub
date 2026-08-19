@@ -1,0 +1,19 @@
+SKILLCERT HUB — MSG91 OTP SETUP
+
+1. Open MSG91 -> OTP Widget -> SkillCert -> Client Side Integration.
+2. Use "Select Token" and select/create the client token.
+3. Copy the generated tokenAuth VALUE (not your AuthKey).
+4. Open skillcert-msg91-config.js.
+5. Replace:
+   PASTE_MSG91_CLIENT_TOKEN_HERE
+   with the tokenAuth value.
+6. Upload the whole website folder/ZIP to your hosting.
+7. Test registration with an Indian mobile number.
+
+SECURITY:
+- Never put your MSG91 AuthKey in the website.
+- Never put your Supabase service_role key in the website.
+- The MSG91 widget returns an access token after successful OTP verification.
+- Your Supabase Edge Function should verify that access token server-side.
+
+The widget ID is already configured for SkillCert.

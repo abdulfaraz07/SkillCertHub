@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en"><head>
+<script src="skillcert-msg91-config.js"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#07111f"><title>SkillCert Hub | IT Courses & Certification</title><style>:root{--bg:#07111f;--panel:#0e1d2d;--panel2:#11263a;--text:#f5f9ff;--muted:#9db0c4;--line:#203a52;--primary:#36d6b4;--primary2:#22ad92;--danger:#ff7272;--shadow:0 18px 55px rgba(0,0,0,.25)}
+*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;min-height:100%;overflow-x:hidden}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 80% 0,#103451 0,#07111f 38%,#050c15 100%);color:var(--text)}
+button,input,select{font:inherit}button{cursor:pointer}button:focus,input:focus,select:focus{outline:2px solid #36d6b455;outline-offset:2px}
+.nav{width:100%;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,70px);border-bottom:1px solid var(--line);background:#07111ff2;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+.brand{border:0;background:none;color:var(--text);font-size:21px;font-weight:900;letter-spacing:-.5px;padding:8px 0}.brand span,.hero-copy h1 span,.cert-brand span{color:var(--primary)}
+.nav-actions{display:flex;gap:8px;align-items:center}.navbtn{border:1px solid var(--line);background:#102238;color:var(--text);border-radius:10px;padding:9px 13px;font-weight:700}.navbtn.primary{background:var(--primary);color:#03251f;border-color:var(--primary)}
+.page{width:min(1160px,calc(100% - 28px));margin:0 auto;padding:34px 0 55px}footer{text-align:center;padding:25px 15px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center;padding:50px 0 75px}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.8px;color:var(--primary);display:inline-block;margin-bottom:12px}.hero-copy h1{font-size:clamp(42px,6vw,70px);line-height:1;letter-spacing:-2.5px;margin:0 0 20px}.hero-copy p{color:var(--muted);font-size:18px;line-height:1.7;max-width:680px}.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.cta,.outline{border-radius:12px;padding:12px 18px;font-weight:800;border:1px solid var(--primary)}.cta{background:var(--primary);color:#03251f}.cta:hover{background:#55e3c7}.outline{background:#0c1b2a;color:var(--text);border-color:var(--line)}.outline:hover{border-color:var(--primary)}.full{width:100%}
+.hero-card,.card,.course,.side-card{background:linear-gradient(160deg,#0f2234,#0a1725);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.hero-card{padding:35px}.hero-icon{font-size:50px}.hero-card h2{font-size:28px}.hero-card p,.course p,.side-card p,.card>p{color:var(--muted);line-height:1.6}.mini-row{display:grid;grid-template-columns:auto 1fr auto 1fr;gap:8px;align-items:center;margin-top:25px;padding-top:20px;border-top:1px solid var(--line)}.mini-row span{color:var(--muted);font-size:12px}
+.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}.section-title h2{font-size:32px;margin:0}.course-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.course{padding:21px;min-width:0}.course-top{display:flex;justify-content:space-between;align-items:center}.course-icon{font-size:34px}.price{font-weight:900;color:var(--primary)}.course h3{font-size:20px;margin:15px 0 8px}.course p{min-height:70px;margin:0 0 16px}.course-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:13px;margin-bottom:14px}.course-btn{width:100%;border:1px solid var(--line);background:#132b40;color:var(--text);padding:11px;border-radius:10px;font-weight:800}.course-btn:hover{border-color:var(--primary)}.badge{font-size:11px;background:#153e35;color:#89eedb;padding:6px 9px;border-radius:20px}.owned{border-color:#245748}
+.auth{max-width:530px;margin:45px auto}.card{padding:28px}.card h1{margin-top:0}.card form{display:grid;gap:15px}.card label{display:grid;gap:6px;color:var(--muted);font-size:13px;font-weight:700}.card input,.card select{width:100%;padding:13px;border-radius:10px;border:1px solid var(--line);background:#071421;color:var(--text)}.switch{text-align:center;color:var(--muted);font-size:13px}.switch button{background:none;border:0;color:var(--primary);font-weight:800}.small{font-size:12px;color:var(--muted)}
+.dashboard-head{margin-bottom:25px}.dashboard-head h1{font-size:38px;margin:0 0 5px}.dashboard-head p{color:var(--muted)}.dash-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}.dash-main h2{margin-top:0}.side-card{padding:22px;height:max-content}.cert-item{display:grid;gap:7px;border-bottom:1px solid var(--line);padding:13px 0}.cert-item span{color:var(--primary);font-weight:800}.cert-item button{width:max-content;border:0;background:none;color:var(--primary);padding:0;font-weight:800}.empty{text-align:center;border:1px dashed var(--line);border-radius:18px;padding:35px;grid-column:1/-1}
+.course-detail{max-width:800px;margin:25px auto;text-align:center}.detail-icon{font-size:70px}.course-detail h1{font-size:48px;margin:5px 0 15px}.course-detail>p{color:var(--muted);font-size:18px;line-height:1.7}.detail-box{margin-top:25px;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:25px}.detail-box li{margin:10px 0;color:#d7e4ef}.pay-line{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px;margin-top:20px;font-size:28px}.pay-line strong{color:var(--primary)}
+.payment{text-align:center}.amount{font-size:45px;font-weight:900;color:var(--primary);margin:15px}.payment p{color:var(--muted);line-height:1.6}
+.quiz{max-width:850px;margin:0 auto}.quizbar{display:flex;justify-content:space-between;gap:15px;align-items:end;margin-bottom:12px}.quizbar b{display:block}.quizbar strong{color:var(--primary);font-size:18px}.progress{height:7px;background:#193148;border-radius:20px;overflow:hidden;margin-bottom:20px}.progress i{height:100%;display:block;background:var(--primary)}.quiz-card h2{line-height:1.4}.option{display:block;width:100%;text-align:left;background:#091827;border:1px solid var(--line);color:var(--text);padding:15px;margin:10px 0;border-radius:12px}.option:hover,.option.selected{border-color:var(--primary);background:#10372f}.quiz-actions{display:flex;justify-content:space-between;margin-top:22px}
+.result{text-align:center;max-width:650px;margin:50px auto}.result-icon{font-size:65px;color:var(--primary)}.score{font-size:64px;font-weight:900;color:var(--primary);margin:15px}.success{color:var(--primary)}.error{color:var(--danger)}.result .outline{margin-left:8px}
+.certificate{max-width:850px;margin:25px auto;background:#fff;color:#13243a;text-align:center;padding:55px;border:10px solid #d8b75a;box-shadow:var(--shadow)}.cert-brand{font-weight:900;font-size:19px}.cert-title{font-family:Georgia,serif;font-size:42px;margin:25px 0}.cert-name{font-family:Georgia,serif;font-size:36px;font-weight:800;color:#173d62;margin:25px 0 10px}.certificate h2{color:#173d62}.cert-line{border-top:1px solid #aaa;width:70%;margin:25px auto}.cert-info{display:flex;justify-content:space-around;gap:20px;font-size:12px}.print{margin-top:25px}
+.verified{margin-top:20px;border:1px solid #235a4c;background:#102d27;padding:18px;border-radius:14px}.verified b{color:var(--primary)}
+
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding:35px 0 50px}.course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dash-grid{grid-template-columns:1fr}.side-card{width:100%}}
+@media(max-width:600px){.nav{height:62px;padding:0 12px}.brand{font-size:18px}.nav-actions{gap:5px}.navbtn{padding:8px 9px;font-size:12px}.page{width:calc(100% - 20px);padding:22px 0 40px}.hero-copy h1{font-size:42px;letter-spacing:-1.8px}.hero-copy p{font-size:15px}.hero-card{padding:22px}.hero-buttons{display:grid;grid-template-columns:1fr}.hero-buttons button{width:100%}.course-grid{grid-template-columns:1fr;gap:12px}.course{padding:18px}.course p{min-height:auto}.section-title h2{font-size:26px}.auth{margin:20px auto}.card{padding:20px}.dashboard-head h1{font-size:30px}.course-detail h1{font-size:35px}.detail-icon{font-size:55px}.detail-box{padding:18px}.pay-line{font-size:24px;align-items:center}.pay-line button{padding:11px 12px}.quizbar{align-items:start}.quiz-card{padding:18px}.quiz-card h2{font-size:22px}.option{padding:14px}.certificate{padding:28px 14px;border-width:6px}.cert-title{font-size:29px}.cert-name{font-size:28px}.cert-info{flex-direction:column}.print{width:100%}}
+@media(max-width:370px){.brand{font-size:16px}.navbtn{font-size:11px;padding:7px}.hero-copy h1{font-size:36px}}
+@media print{.nav,footer,.print{display:none!important}.page{width:100%;padding:0}.certificate{box-shadow:none;margin:0;max-width:none}}.demo-confirm{border-top:1px solid var(--line);padding-top:15px;margin-top:18px}.return-note{margin-top:18px}
+.home-btn{border:1px solid var(--line);background:#0c1b2b;color:#eaf3fb;padding:9px 13px;border-radius:10px;font-weight:800;cursor:pointer;white-space:nowrap}
+.home-btn:hover{border-color:#39d7b5;color:#39d7b5}.floating-home{position:fixed;left:16px;bottom:18px;width:48px;height:48px;border-radius:50%;border:1px solid #23435a;background:#0c1b2b;color:#39d7b5;font-size:24px;font-weight:900;z-index:999;box-shadow:0 8px 25px rgba(0,0,0,.3);cursor:pointer}
+@media(max-width:600px){.home-btn{padding:8px 10px;font-size:12px}.nav{gap:8px}}
+
+.certificate-lock,.certificate-full{max-width:760px;margin:20px auto}.cert-preview,.certificate-paper{position:relative;background:#f8f4e8;color:#17222d;border-radius:16px;padding:28px;text-align:center;border:6px double #b9a56a;margin:20px 0;overflow:hidden}.cert-preview{filter:blur(.2px)}.cert-watermark{position:absolute;inset:40% 0 auto;font-size:48px;font-weight:900;opacity:.12;transform:rotate(-20deg)}.cert-preview h2,.certificate-paper h1,.certificate-paper h2,.certificate-paper h3{color:#17222d}.cert-meta{display:flex;justify-content:center;gap:60px;margin:22px 0}.cert-brand{letter-spacing:4px;font-weight:900}.certificate-paper{min-height:420px;display:flex;flex-direction:column;justify-content:center}.certificate-paper h2{font-size:34px}.certificate-paper h3{font-size:25px}@media(max-width:600px){.cert-meta{gap:25px}.certificate-paper{padding:18px}.certificate-paper h2{font-size:26px}.cert-preview h3{font-size:20px}}
+</style></head><body><div id="app"></div><script>const KEY="skillcert_hub_v2";
+const COURSES=[
+{id:"data",name:"Data Analytics",icon:"📊",desc:"Excel, SQL, Python, statistics, Power BI & visualization",price:149,color:"teal",questions:[
+["Which SQL clause filters rows before grouping?",["WHERE","HAVING","ORDER BY","GROUP BY"],0],
+["Which Excel function counts cells that meet a condition?",["SUMIF","COUNTIF","AVERAGE","ROUND"],1],
+["Which Python library is primarily used for tabular data manipulation?",["Pandas","Flask","Requests","Tkinter"],0],
+["In statistics, the median is the:",["Most frequent value","Arithmetic average","Middle value after ordering","Largest value"],2],
+["Which Power BI feature is commonly used to transform and clean data?",["Power Query","PowerPoint","OneDrive","Outlook"],0],
+["What does KPI stand for?",["Key Performance Indicator","Known Process Index","Key Program Input","Knowledge Performance Interface"],0],
+["Which chart is generally suitable for showing a trend over time?",["Line chart","Pie chart","Gauge","Treemap"],0],
+["What is a primary key used for in a relational table?",["Uniquely identifying rows","Sorting every row","Encrypting data","Creating charts"],0],
+["Which measure describes spread around the mean?",["Variance","Median","Mode","Percentile rank"],0],
+["What does ETL commonly mean?",["Extract, Transform, Load","Evaluate, Test, Link","Export, Track, Log","Encode, Transfer, Launch"],0],
+["Which SQL command retrieves data from a table?",["SELECT","INSERT","UPDATE","DELETE"],0],
+["A dashboard is mainly designed to:",["Communicate key metrics visually","Replace a database","Write application code","Compress files"],0]
+]},
+{id:"python",name:"Python Programming",icon:"🐍",desc:"Python fundamentals, OOP, functions, data structures & problem solving",price:149,questions:[
+["Which keyword defines a function in Python?",["func","define","def","function"],2],
+["Which data type is mutable?",["tuple","string","list","int"],2],
+["What does len([10,20,30]) return?",["2","3","4","30"],1],
+["Which symbol starts a comment in Python?",["//","#","<!--",";"],1],
+["Which collection stores unique unordered values?",["List","Tuple","Set","String"],2],
+["What is the result of 3 ** 2?",["6","8","9","12"],2],
+["Which keyword handles exceptions?",["try","check","catch","error"],0],
+["Which library is widely used for numerical arrays?",["NumPy","Flask","Django","Selenium"],0],
+["What does OOP stand for?",["Object-Oriented Programming","Open Output Process","Object Operation Protocol","Ordered Object Parsing"],0],
+["Which statement exits a loop immediately?",["skip","stop","break","exitloop"],2],
+["Which file extension is standard for Python source files?",[".java",".py",".js",".pt"],1],
+["Which operator checks equality?",["=","==","===","!="],1]
+]},
+{id:"sql",name:"SQL & Databases",icon:"🗄️",desc:"SQL queries, joins, database concepts, aggregation & normalization",price:149,questions:[
+["Which command creates a new table?",["MAKE TABLE","CREATE TABLE","NEW TABLE","ADD TABLE"],1],
+["Which clause groups rows for aggregate calculations?",["GROUP BY","ORDER BY","WHERE","JOIN BY"],0],
+["Which aggregate function returns the number of rows?",["COUNT","TOTAL","ROWS","NUMBER"],0],
+["Which JOIN returns matching rows from both tables?",["INNER JOIN","LEFT JOIN","RIGHT JOIN","OUTER ONLY"],0],
+["Which command changes existing rows?",["CHANGE","UPDATE","ALTER ROW","MODIFY"],1],
+["Which constraint prevents duplicate values?",["UNIQUE","ANY","MATCH","SINGLE"],0],
+["Which clause sorts query results?",["SORT","ORDER BY","GROUP BY","ARRANGE"],1],
+["Which normal form removes repeating groups?",["1NF","2NF","3NF","BCNF"],0],
+["Which command removes a table definition?",["DELETE TABLE","DROP TABLE","CLEAR TABLE","REMOVE TABLE"],1],
+["Which key references a key in another table?",["Primary key","Foreign key","Unique key","Candidate key"],1],
+["Which SQL statement adds rows?",["INSERT","APPEND","ADD ROW","PUT"],0],
+["Which operator tests membership in a list?",["IN","WITHIN","HAS","AMONG"],0]
+]},
+{id:"powerbi",name:"Power BI",icon:"📈",desc:"Power BI dashboards, Power Query, DAX, data modeling & reporting",price:149,questions:[
+["Power BI is primarily used for:",["Business intelligence and visualization","Video editing","Operating systems","Email hosting"],0],
+["Which tool transforms data before loading it?",["Power Query","PowerPoint","Power Automate only","OneNote"],0],
+["DAX is mainly used for:",["Measures and calculations","CSS styling","Server installation","Image editing"],0],
+["Which view helps build relationships between tables?",["Model view","Reading view","Print view","Slide view"],0],
+["Which visual is ideal for comparing categories?",["Bar chart","Line-only chart","Gauge only","Map only"],0],
+["A slicer is used to:",["Filter report data interactively","Delete tables","Write Python","Create databases"],0],
+["What is a measure?",["A calculated value evaluated in filter context","A physical table","A file format","A dashboard theme"],0],
+["Power BI reports can be published to:",["Power BI Service","BI Compiler","Excel BIOS","SQL Console"],0],
+["What does refresh do?",["Updates data from its source","Deletes visuals","Changes passwords","Exports CSS"],0],
+["A star schema commonly contains:",["Fact and dimension tables","Only one table","Only dimensions","Only indexes"],0],
+["Which is a DAX aggregation?",["SUM","MERGEFILE","IMPORTCSV","RENDER"],0],
+["Drill-through allows users to:",["Navigate to a detailed page filtered by context","Delete a report","Change the OS","Compile SQL"],0]
+]},
+{id:"web",name:"Web Development",icon:"🌐",desc:"HTML, CSS, JavaScript, APIs, responsive design & web fundamentals",price:149,questions:[
+["HTML primarily defines:",["Web page structure","Database indexes","Server hardware","Network cables"],0],
+["CSS is primarily used for:",["Presentation and styling","Database queries","Email sending","Compilers"],0],
+["Which language adds behavior to web pages?",["JavaScript","SQL","CSS","XML only"],0],
+["Which HTML element creates a hyperlink?",["<a>","<linker>","<href>","<url>"],0],
+["Which CSS property changes text color?",["color","font-paint","text-colorize","foreground"],0],
+["Which keyword declares a block-scoped constant in JavaScript?",["let","var","const","fixed"],2],
+["JSON is commonly used for:",["Data interchange","Image compression only","CPU control","CSS animation only"],0],
+["What does API commonly stand for?",["Application Programming Interface","Application Page Index","Advanced Program Input","Automated Protocol Instance"],0],
+["Responsive design aims to:",["Adapt layouts to different screen sizes","Increase database size","Disable mobile browsers","Replace JavaScript"],0],
+["Which HTTP method commonly retrieves data?",["GET","PUSH","FETCHONLY","READ"],0],
+["Which browser feature stores small key-value data locally?",["localStorage","localFileDB","browserSQLOnly","screenCache"],0],
+["Which tag is used for the main page heading?",["<h1>","<head1>","<title1>","<heading>"],0]
+]},
+{id:"cloud",name:"Cloud & DevOps Basics",icon:"☁️",desc:"Cloud concepts, containers, CI/CD, Git, Linux & deployment",price:149,questions:[
+["What does CI/CD commonly refer to?",["Continuous Integration and Continuous Delivery/Deployment","Code Inspection / Code Design","Cloud Integration / Cloud Data","Central Input / Central Delivery"],0],
+["Git is primarily a:",["Version control system","Database","Web browser","Cloud provider"],0],
+["A container packages an application with:",["Its dependencies and runtime environment","Only its logo","A physical server","A spreadsheet"],0],
+["Which command commonly shows Git status?",["git status","git check","git state","git show-status"],0],
+["Linux is a:",["Operating system family","Database language","Cloud invoice","Programming framework"],0],
+["What is a cloud region?",["A geographic area containing cloud infrastructure","A user password","A Git branch","A database column"],0],
+["What does IaC mean?",["Infrastructure as Code","Internet as Cache","Integration and Control","Instance as Cloud"],0],
+["Which tool is commonly associated with container orchestration?",["Kubernetes","Excel","Photoshop","Power BI"],0],
+["What is a deployment pipeline?",["Automated stages for building/testing/releasing software","A physical cable","A database table","A UI color"],0],
+["Which is a common cloud service model?",["IaaS","HTMLaaS","SQL-only","GPU-only"],0],
+["What does SSH provide?",["Secure remote shell access","Image editing","Spreadsheet formulas","DNS registration only"],0],
+["What is scalability?",["Ability to handle changing workload by adding/removing resources","Deleting users","Changing a logo","Renaming a server"],0]
+]},
+{id:"cyber",name:"Cybersecurity Fundamentals",icon:"🔐",desc:"Security basics, authentication, threats, encryption & safe computing",price:149,questions:[
+["What does MFA add to authentication?",["Additional verification factors","More usernames","Faster CPUs","A new database"],0],
+["Phishing commonly attempts to:",["Trick users into revealing information","Improve encryption","Back up files","Optimize SQL"],0],
+["Encryption converts readable data into:",["Ciphertext","HTML","Metadata only","Source code"],0],
+["A strong password should generally be:",["Long and unique","Short and reused","Only a name","A public phrase"],0],
+["What is least privilege?",["Give users only the access they need","Give everyone admin access","Remove all passwords","Share credentials"],0],
+["Malware is:",["Malicious software","A database engine","A cloud region","A CSS framework"],0],
+["HTTPS helps protect web traffic using:",["TLS encryption","Plain HTTP only","FTP","Telnet"],0],
+["A firewall is used to:",["Control network traffic based on rules","Edit documents","Compile Python","Create charts"],0],
+["A vulnerability is:",["A weakness that can be exploited","A successful backup","A strong password","A software license"],0],
+["What is a security patch?",["An update that fixes issues or vulnerabilities","A password list","A database row","A network cable"],0],
+["Backups help with:",["Data recovery","Increasing screen brightness","Writing CSS","Changing DNS names"],0],
+["Social engineering primarily targets:",["Human behavior","CPU temperature","Database indexes","Screen resolution"],0]
+]},
+{id:"java",name:"Java Programming",icon:"☕",desc:"Java fundamentals, OOP, collections, exceptions & core programming",price:149,questions:[
+["Which keyword is used to define a class in Java?",["class","define","struct","object"],0],
+["Which method is the entry point of a Java application?",["start()","main()","run()","init()"],1],
+["Which concept allows one class to inherit another?",["Inheritance","Encapsulation","Compilation","Casting"],0],
+["Which collection does not allow duplicate elements?",["List","Set","ArrayList","Vector"],1],
+["Which keyword creates an object?",["new","make","create","object"],0],
+["Java source files normally use which extension?",[".java",".jav",".class",".j"],0],
+["Which keyword prevents a method from being overridden?",["final","static","privateonly","sealed"],0],
+["Which is used to handle exceptions?",["try-catch","if-else only","switch-case","loop"],0],
+["JVM stands for:",["Java Virtual Machine","Java Variable Method","Java Verified Module","Java Visual Machine"],0],
+["Which access modifier gives widest common visibility?",["public","private","protected","package"],0]
+]},
+{id:"javascript",name:"JavaScript",icon:"⚡",desc:"Modern JavaScript, DOM, ES6+, async programming & browser APIs",price:149,questions:[
+["Which keyword declares a block-scoped variable?",["let","varonly","define","value"],0],
+["Which method converts JSON text into a JavaScript object?",["JSON.parse()","JSON.object()","JSON.read()","JSON.decodeText()"],0],
+["Which symbol is used for strict equality?",["===","==","=","!=="],0],
+["What does DOM stand for?",["Document Object Model","Data Object Method","Document Output Module","Digital Object Manager"],0],
+["Which method adds an item to the end of an array?",["push()","append()","addEnd()","insert()"],0],
+["Which keyword handles asynchronous promises?",["await","waitfor","asyncwait","pause"],0],
+["Which function schedules code after a delay?",["setTimeout()","delay()","wait()","after()"],0],
+["What does NaN mean?",["Not a Number","No Available Name","New Array Number","Null as Number"],0],
+["Which operator spreads iterable values?",["...","***","=>","??"],0],
+["Which API is commonly used for HTTP requests in modern browsers?",["fetch()","httpGetOnly()","requestWeb()","browserHTTP()"],0]
+]},
+{id:"git",name:"Git & GitHub",icon:"🔧",desc:"Version control, branches, pull requests, collaboration & repositories",price:149,questions:[
+["Git is a:",["Version control system","Cloud database","Programming language","Web server"],0],
+["Which command creates a Git repository?",["git init","git start","git create","git repo"],0],
+["Which command stages changes?",["git add","git stageonly","git push","git commit"],0],
+["Which command records staged changes?",["git commit","git save","git record","git store"],0],
+["Which command uploads local commits to a remote repository?",["git push","git upload","git send","git publish"],0],
+["Which command downloads remote changes?",["git pull","git fetchallonly","git download","git syncnow"],0],
+["A branch is used to:",["Develop independently from another line of work","Delete a repository","Encrypt code","Install Git"],0],
+["A pull request is commonly used to:",["Propose and review code changes","Create a password","Run a database","Buy hosting"],0],
+["Which file commonly stores ignored paths?",[".gitignore",".ignoregit",".gitexclude",".gitconfigignore"],0],
+["GitHub is primarily a:",["Code hosting and collaboration platform","Programming language","Database engine","Linux distribution"],0]
+]},
+{id:"ai",name:"Artificial Intelligence Basics",icon:"🤖",desc:"AI concepts, machine learning, generative AI, models & responsible AI",price:149,questions:[
+["AI stands for:",["Artificial Intelligence","Automated Internet","Advanced Integration","Applied Interface"],0],
+["Machine learning is a subset of:",["Artificial Intelligence","HTML","Networking","Operating systems"],0],
+["Supervised learning uses:",["Labeled training data","No data","Only passwords","Only images"],0],
+["A model's prediction is based on:",["Patterns learned from data","Random typing","Screen size","File names only"],0],
+["Generative AI can:",["Generate new content from learned patterns","Only store files","Only format spreadsheets","Only browse websites"],0],
+["A prompt is:",["An instruction or input given to an AI system","A database key","A CPU instruction only","A network cable"],0],
+["Overfitting means a model:",["Learns training data too closely and generalizes poorly","Has no data","Always predicts correctly","Cannot be trained"],0],
+["Which is commonly used to evaluate classification models?",["Precision and recall","Screen resolution","CPU clock only","File size"],0],
+["Responsible AI includes:",["Fairness, privacy, safety and transparency","Removing all testing","Sharing private data","Ignoring bias"],0],
+["An AI hallucination is:",["A confident but incorrect generated response","A GPU failure","A database backup","A network outage"],0]
+]},
+{id:"ml",name:"Machine Learning Fundamentals",icon:"🧠",desc:"Regression, classification, features, training, evaluation & model basics",price:149,questions:[
+["Regression commonly predicts:",["A continuous numeric value","Only categories","A password","A web page"],0],
+["Classification predicts:",["Categories or classes","Only decimals","File sizes","CPU temperature only"],0],
+["A feature is:",["An input variable used by a model","A certificate","A password","A database server"],0],
+["Training data is used to:",["Learn model parameters or patterns","Print certificates","Create email accounts","Change CSS"],0],
+["A test set is mainly used to:",["Evaluate performance on unseen data","Train forever","Store passwords","Build a website"],0],
+["Accuracy is:",["Correct predictions divided by total predictions","Total rows only","Training time","Model size"],0],
+["What is a target variable?",["The outcome the model aims to predict","A CSS class","A server","A Git branch"],0],
+["Cross-validation helps estimate:",["Generalization performance","Internet speed","Storage cost","Screen size"],0],
+["Feature scaling is useful for:",["Putting numeric features on comparable scales","Deleting features","Changing file extensions","Publishing websites"],0],
+["A confusion matrix is used mainly for:",["Classification evaluation","HTML rendering","Database normalization","Git management"],0]
+]},
+{id:"devops",name:"DevOps Engineering",icon:"🚀",desc:"CI/CD, Docker, Kubernetes, monitoring, automation & deployment",price:149,questions:[
+["DevOps combines development with:",["Operations","Design only","Accounting","Marketing"],0],
+["Docker is commonly used for:",["Containerization","Spreadsheet editing","Graphic design","Email"],0],
+["Kubernetes is used for:",["Container orchestration","SQL querying","Image compression","CSS"],0],
+["CI means:",["Continuous Integration","Cloud Installation","Code Inspection only","Central Infrastructure"],0],
+["CD can mean:",["Continuous Delivery or Deployment","Code Download","Cloud Database","Central Debugging"],0],
+["Monitoring helps teams:",["Observe system health and performance","Write HTML only","Create invoices","Design logos"],0],
+["Infrastructure as Code means:",["Managing infrastructure through code/configuration","Writing only Java","Using paper forms","Deleting servers manually"],0],
+["A pipeline automates:",["Build, test and deployment stages","Only password changes","Only email","Only DNS"],0],
+["Rollback means:",["Returning to a previous working version","Deleting all code","Changing a username","Restarting a browser"],0],
+["A container image is:",["A packaged application environment","A screenshot","A database row","A Git password"],0]
+]},
+{id:"testing",name:"Software Testing & QA",icon:"🧪",desc:"Testing types, test cases, defects, automation & quality assurance",price:149,questions:[
+["QA stands for:",["Quality Assurance","Quick Application","Query Analysis","Quality Automation only"],0],
+["A test case contains:",["Steps, inputs and expected results","Only a password","Only source code","Only a screenshot"],0],
+["Unit testing focuses on:",["Small units/components of code","Entire company operations","Cloud billing","Marketing"],0],
+["Integration testing checks:",["Interaction between components","Only button colors","Employee attendance","Network cables"],0],
+["Regression testing checks whether:",["Existing functionality still works after changes","A server is expensive","A logo is correct","A password is short"],0],
+["A defect is:",["A problem or deviation from expected behavior","A feature request only","A database table","A Git branch"],0],
+["Automation testing uses:",["Tools/scripts to execute tests","Only manual notes","Only screenshots","Only email"],0],
+["Smoke testing is a:",["Basic check that a build is stable enough for further testing","Security attack","Database backup","UI design method"],0],
+["UAT stands for:",["User Acceptance Testing","Universal Automation Test","Unit Analysis Tool","User API Testing"],0],
+["A bug report should include:",["Clear steps, expected and actual results","Only a title","Only a screenshot","Only a username"],0]
+]},
+{id:"linux",name:"Linux Fundamentals",icon:"🐧",desc:"Linux commands, files, permissions, processes & shell basics",price:149,questions:[
+["Which command lists files?",["ls","list","dironly","showfiles"],0],
+["Which command prints the current directory?",["pwd","where","cwd","path"],0],
+["Which command changes directory?",["cd","change","move","goto"],0],
+["Which command creates a directory?",["mkdir","newdir","makedironly","dirnew"],0],
+["Which command removes a file?",["rm","delete","removefile","erasefile"],0],
+["Which command displays running processes?",["ps","procshow","jobsall","runlist"],0],
+["Which symbol represents the home directory in a shell?",["~","/homeonly","#","@"],0],
+["chmod is used to:",["Change file permissions","Change file name only","Compress files","Create users"],0],
+["Which command searches text in files?",["grep","findtextonly","search","scan"],0],
+["Which shell is widely used on Linux?",["Bash","PowerShell only","CMD only","SQL"],0]
+]},
+{id:"networking",name:"Networking Fundamentals",icon:"🌐",desc:"TCP/IP, DNS, HTTP, IP addressing, routing & network security",price:149,questions:[
+["DNS translates:",["Domain names to IP addresses","Passwords to usernames","HTML to CSS","Files to folders"],0],
+["HTTP is a:",["Web application protocol","Database language","Programming language","File system"],0],
+["TCP provides:",["Reliable connection-oriented delivery","Only video editing","No networking","Database storage"],0],
+["An IP address identifies:",["A network interface/device address","A password","A file type","A CSS class"],0],
+["HTTPS uses:",["TLS to secure web traffic","FTP","Telnet","Plain HTTP only"],0],
+["A router primarily:",["Forwards packets between networks","Stores passwords","Runs spreadsheets","Compiles Java"],0],
+["A subnet mask helps determine:",["Network and host portions of an IP address","CPU speed","File size","Web colors"],0],
+["Which port is commonly associated with HTTPS?",["443","80","21","25"],0],
+["Which protocol is commonly used for secure remote administration?",["SSH","FTP","HTTP","SMTP"],0],
+["Latency refers to:",["Delay in data transmission","Storage capacity","CPU cores","Screen size"],0]
+]},
+{id:"aws",name:"AWS Cloud Fundamentals",icon:"☁️",desc:"AWS core services, IAM, EC2, S3, VPC, databases & cloud concepts",price:149,questions:[
+["What does AWS stand for?",["Amazon Web Services","Advanced Web System","Amazon Web Software","Automated Web Services"],0],
+["Which AWS service provides object storage?",["S3","EC2","RDS","VPC"],0],
+["EC2 is primarily used for:",["Virtual servers","Object storage","DNS only","Email"],0],
+["IAM is used for:",["Identity and access management","Image processing","Database backups only","Web design"],0],
+["Which service is a managed relational database?",["RDS","S3","Lambda","CloudFront"],0],
+["AWS Lambda is:",["Serverless compute","Object storage","A firewall only","A CDN only"],0],
+["VPC provides:",["An isolated virtual network","A spreadsheet","A code editor","A certificate"],0],
+["CloudFront is:",["A content delivery network","A database","A programming language","A Linux shell"],0],
+["CloudWatch is used for:",["Monitoring and observability","Source control","Payment processing","UI design"],0],
+["Auto Scaling helps:",["Adjust compute capacity based on demand","Encrypt passwords only","Create HTML","Store images only"],0]
+]},
+{id:"gcp",name:"Google Cloud Fundamentals",icon:"🌤️",desc:"Google Cloud, Compute Engine, Cloud Storage, IAM, BigQuery & serverless",price:149,questions:[
+["GCP stands for:",["Google Cloud Platform","Google Compute Program","Global Cloud Platform","Google Code Platform"],0],
+["Which GCP service provides object storage?",["Cloud Storage","Compute Engine","BigQuery","Cloud SQL"],0],
+["Compute Engine provides:",["Virtual machines","Object storage","Email","DNS only"],0],
+["BigQuery is primarily:",["A cloud data warehouse","A web browser","A code editor","A container image"],0],
+["Cloud IAM manages:",["Identity and access","Video streaming","Web styling","File compression"],0],
+["Cloud Functions is used for:",["Serverless execution","Spreadsheet editing","Physical servers","Source control"],0],
+["Cloud SQL is:",["A managed relational database service","A CDN","A monitoring dashboard","A DNS registrar"],0],
+["A GCP project is commonly used to:",["Organize resources, APIs and billing","Write only Java","Create passwords","Replace DNS"],0],
+["Google Kubernetes Engine is:",["A managed Kubernetes service","A database engine","A CDN","A programming language"],0],
+["Cloud Monitoring helps with:",["Observability and metrics","Graphic design","Payroll","HTML validation"],0]
+]},
+{id:"azure",name:"Microsoft Azure Fundamentals",icon:"🔷",desc:"Azure compute, storage, networking, identity & cloud architecture basics",price:149,questions:[
+["Azure is Microsoft's:",["Cloud computing platform","Database language","Browser","Operating system only"],0],
+["Which Azure service provides virtual machines?",["Azure Virtual Machines","Blob Storage","Azure DNS","Cosmos DB"],0],
+["Azure Blob Storage is used for:",["Object storage","Virtual CPUs","Email only","Source control"],0],
+["Microsoft Entra ID is used for:",["Identity and access management","Video editing","Data visualization","Container images"],0],
+["Azure Functions provides:",["Serverless compute","Physical servers","Only databases","Only DNS"],0],
+["Azure Virtual Network provides:",["Private networking","Source control","Object storage","Certificates"],0],
+["Azure Monitor is used for:",["Monitoring applications and resources","Creating websites","Writing SQL only","Managing payroll"],0],
+["Azure SQL Database is:",["A managed relational database","A Linux distribution","A CDN","A Git server"],0],
+["Azure Kubernetes Service is:",["Managed Kubernetes","Object storage","A DNS service","A spreadsheet"],0],
+["Cloud elasticity means:",["Resources can scale with demand","Data is always public","Servers never change","Only storage is encrypted"],0]
+]},
+{id:"genai",name:"Generative AI",icon:"✨",desc:"LLMs, prompting, embeddings, RAG, AI agents & responsible GenAI",price:149,questions:[
+["Generative AI is designed to:",["Generate new content","Only store files","Only calculate taxes","Only route packets"],0],
+["LLM stands for:",["Large Language Model","Long Logic Machine","Language Learning Module","Large Link Manager"],0],
+["A prompt is:",["An instruction or input to an AI model","A database table","A network protocol","A file extension"],0],
+["RAG stands for:",["Retrieval-Augmented Generation","Random AI Generation","Rapid Answer Gateway","Remote Agent Graph"],0],
+["Embeddings represent:",["Data as numerical vectors capturing semantic relationships","Only passwords","Only images as files","CPU instructions"],0],
+["A hallucination in GenAI is:",["A generated answer that is incorrect or unsupported","A server reboot","A database backup","A UI animation"],0],
+["Temperature generally controls:",["Randomness/creativity of model output","Internet speed","Storage capacity","Screen brightness"],0],
+["An AI agent can:",["Use tools and take actions toward a goal","Only display text","Only store images","Only compile CSS"],0],
+["Responsible GenAI includes:",["Privacy, safety, fairness and human oversight","Sharing secrets","Ignoring bias","Skipping evaluation"],0],
+["Fine-tuning means:",["Adapting a pretrained model using additional task-specific data","Deleting a model","Changing a website color","Creating a DNS record"],0]
+]},
+{id:"prompt",name:"Prompt Engineering",icon:"🪄",desc:"Prompt structure, role prompting, few-shot examples, evaluation & workflows",price:149,questions:[
+["A good prompt should usually be:",["Clear and specific","As vague as possible","Only one word","A random password"],0],
+["Role prompting gives the model:",["A context or role to follow","A database connection","A payment key","A network address"],0],
+["Few-shot prompting provides:",["Examples of desired input-output behavior","No examples","Only code comments","Only passwords"],0],
+["Prompt constraints are useful for:",["Controlling output format and requirements","Increasing disk space","Changing DNS","Starting a server"],0],
+["Structured output can help:",["Make AI responses easier for software to parse","Increase CPU cores","Create backups","Change screen size"],0],
+["Prompt evaluation means:",["Testing outputs against defined criteria","Deleting prompts","Changing the model name","Turning off logs"],0],
+["Chain-of-thought should generally be:",["Handled appropriately without requesting hidden reasoning","Always exposed verbatim","Stored publicly","Used as a password"],0],
+["Grounding a response means:",["Using trusted context or data to improve factuality","Removing context","Deleting documents","Changing fonts"],0],
+["A system instruction generally defines:",["High-level behavior and constraints","A payment transaction","A database index","A CSS color"],0],
+["Prompt injection is:",["An attempt to manipulate an AI system through untrusted instructions","A cloud backup","A SQL join","A DNS lookup"],0]
+]},
+{id:"dataengineering",name:"Data Engineering",icon:"🏗️",desc:"ETL/ELT, data pipelines, warehouses, Spark, Airflow & cloud data",price:149,questions:[
+["ETL stands for:",["Extract, Transform, Load","Evaluate, Train, Launch","Export, Transfer, Link","Encode, Test, Load"],0],
+["ELT differs from ETL mainly because:",["Transformation happens after loading into the target system","Extraction is skipped","Loading is skipped","It uses no data"],0],
+["A data warehouse is optimized for:",["Analytics and reporting","Gaming only","Image editing","Password storage"],0],
+["Apache Spark is used for:",["Distributed data processing","Web design","Payment processing","DNS"],0],
+["Airflow is commonly used for:",["Workflow orchestration","Image storage","Frontend styling","Identity management"],0],
+["A data pipeline is:",["A sequence of steps that moves/transforms data","A network cable","A web page","A certificate"],0],
+["Partitioning can improve:",["Query and processing performance","Password security only","Logo quality","Screen brightness"],0],
+["A data lake commonly stores:",["Large volumes of raw or varied data","Only SQL tables","Only certificates","Only CSS"],0],
+["Batch processing handles:",["Data in groups at scheduled or triggered times","Only live video","Only passwords","Only UI clicks"],0],
+["Streaming processing handles:",["Data continuously or near real time","Only monthly reports","Only static files","Only HTML"],0]
+]},
+{id:"cyber",name:"Cybersecurity Fundamentals",icon:"🛡️",desc:"Security principles, threats, authentication, encryption, OWASP & risk",price:149,questions:[
+["CIA triad means:",["Confidentiality, Integrity, Availability","Control, Internet, Access","Code, Identity, Authentication","Cloud, Integrity, Automation"],0],
+["Phishing is:",["A social engineering attack using deceptive messages","A database query","A backup method","A cloud service"],0],
+["MFA provides:",["Multiple authentication factors","Multiple databases","Multiple browsers","Multiple IPs only"],0],
+["Encryption protects:",["Data by transforming it using cryptographic methods","Only screen colors","Only file names","Only CPU speed"],0],
+["Least privilege means:",["Give users only the access they need","Give everyone admin access","Disable authentication","Share passwords"],0],
+["A firewall is used to:",["Control network traffic according to rules","Create certificates","Edit videos","Compile Java"],0],
+["OWASP is known for:",["Web application security guidance","Cloud billing","Graphic design","Video hosting"],0],
+["A vulnerability is:",["A weakness that can be exploited","A successful backup","A valid login","A database row"],0],
+["Hashing is commonly:",["A one-way transformation used for integrity/password storage","A reversible encryption method only","A DNS protocol","A UI framework"],0],
+["Zero Trust emphasizes:",["Continuous verification and least privilege","Trusting every internal device","No authentication","Public passwords"],0]
+]},
+{id:"docker",name:"Docker & Containers",icon:"🐳",desc:"Images, containers, Dockerfiles, registries, volumes & networking",price:149,questions:[
+["A Docker container is:",["A running instance of a container image","A virtual machine only","A database row","A Git branch"],0],
+["A Docker image is:",["A packaged template used to create containers","A screenshot","A password","A DNS record"],0],
+["A Dockerfile contains:",["Instructions for building an image","Only test results","Only SQL","Only HTML"],0],
+["Docker Hub is commonly:",["A container image registry","A database","A cloud firewall","A code editor"],0],
+["Which command builds an image?",["docker build","docker make","docker imagecreate","docker compile"],0],
+["Which command starts a container?",["docker run","docker startapp","docker launch","docker executeimage"],0],
+["Volumes are commonly used for:",["Persistent container data","CSS styling","DNS routing","CPU scaling"],0],
+["Containerization helps with:",["Consistent application environments","Only graphic design","Only email","Only payroll"],0],
+["A container registry stores:",["Container images","Only passwords","Only logs","Only DNS records"],0],
+["Docker networking allows:",["Containers to communicate through configured networks","Only users to log in","Only files to print","Only images to render"],0]
+]}
+];
+let state=JSON.parse(localStorage.getItem(KEY)||"null")||{students:[],orders:[],attempts:[],certs:[],settings:{pass:70,questions:10,time:10},session:null};
+const esc=x=>String(x).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+const save=()=>localStorage.setItem(KEY,JSON.stringify(state));
+const MERCHANT_UPI_ID = "8105110581-3@naviaxis";
+const MERCHANT_NAME = "SkillCert Hub";
+function upiLink(course){
+  const pa=encodeURIComponent(MERCHANT_UPI_ID),pn=encodeURIComponent(MERCHANT_NAME),am=encodeURIComponent(course.price);
+  return `upi://pay?pa=${pa}&pn=${pn}&am=${am}&cu=INR&tn=${encodeURIComponent(course.name+" Certification")}`;
+}
+function openPrivateUPI(courseId){
+  const c=COURSES.find(x=>x.id===courseId);
+  if(!c) return;
+  pendingQuizCourseId=courseId;
+  sessionStorage.setItem("pendingQuizCourse",courseId);
+  const link=upiLink(c);
+  window.location.href=link;
+}
+function returnToQuizIfPending(){
+  const id=pendingQuizCourseId || sessionStorage.getItem("pendingQuizCourse");
+  if(!id) return;
+  const c=COURSES.find(x=>x.id===id);
+  if(!c) return;
+  // When the UPI app returns focus to the browser, open the quiz automatically.
+  if(document.visibilityState==="visible" && state.user){
+    sessionStorage.removeItem("pendingQuizCourse");
+    pendingQuizCourseId=null;
+    startQuiz(c);
+  }
+}
+document.addEventListener("visibilitychange",returnToQuizIfPending);
+window.addEventListener("pageshow",returnToQuizIfPending);
+
+
+function certificatePrice(){return 149}
+function certificatePaid(courseId){
+  return !!(state.certPaid && state.certPaid[courseId]);
+}
+function ensureCertState(){
+  if(!state.certPaid) state.certPaid={};
+}
+function showCertificatePaywall(course){
+  ensureCertState();
+  const cert=state.certificates?.[course.id];
+  shell(`<div class="auth"><div class="card certificate-lock">
+    <span class="eyebrow">CERTIFICATE EARNED</span>
+    <h1>🎉 Congratulations!</h1>
+    <p>You passed the <b>${esc(course.name)}</b> quiz.</p>
+    <div class="cert-preview">
+      <div class="cert-watermark">PREVIEW</div>
+      <h2>SkillCert Hub</h2>
+      <h3>Certificate of Achievement</h3>
+      <p>This certifies that</p>
+      <strong>${esc(state.user?.name||"Student")}</strong>
+      <p>has successfully passed</p>
+      <strong>${esc(course.name)}</strong>
+      <p class="small">Certificate ID: ${esc(cert?.id||"Pending")}</p>
+    </div>
+    <div class="amount">₹${certificatePrice()}</div>
+    <p>Pay ₹149 to unlock and view/download your official certificate.</p>
+    <button class="cta full" onclick="payForCertificate('${course.id}')">Pay ₹149 & Unlock Certificate</button>
+    <button class="outline full" onclick="dashboard()">Back to Courses</button>
+  </div></div>`);
+}
+function payForCertificate(courseId){
+  const c=COURSES.find(x=>x.id===courseId);
+  if(!c)return;
+  sessionStorage.setItem("pendingCertificateCourse",courseId);
+  const link=upiLink({...c,price:certificatePrice()});
+  window.location.href=link;
+}
+function openCertificateAfterReturn(){
+  const id=sessionStorage.getItem("pendingCertificateCourse");
+  if(!id)return;
+  const c=COURSES.find(x=>x.id===id);
+  if(!c)return;
+  if(document.visibilityState==="visible" && state.user){
+    sessionStorage.removeItem("pendingCertificateCourse");
+    ensureCertState();
+    // Demo/local state unlock after returning from UPI.
+    // Replace with Razorpay verification in production.
+    state.certPaid[id]=true;
+    save();
+    showCertificate(c);
+  }
+}
+document.addEventListener("visibilitychange",openCertificateAfterReturn);
+window.addEventListener("pageshow",openCertificateAfterReturn);
+function showCertificate(course){
+  const cert=state.certificates?.[course.id];
+  shell(`<div class="auth"><div class="card certificate-full">
+    <span class="eyebrow">VERIFIED CERTIFICATE</span>
+    <div class="certificate-paper">
+      <p class="cert-brand">SKILLCERT HUB</p>
+      <h1>Certificate of Achievement</h1>
+      <p>This certificate is proudly presented to</p>
+      <h2>${esc(state.user?.name||"Student")}</h2>
+      <p>for successfully passing the</p>
+      <h3>${esc(course.name)}</h3>
+      <p>Quiz Assessment</p>
+      <div class="cert-meta"><span>Certificate ID<br><b>${esc(cert?.id||"SCH-"+Date.now())}</b></span><span>Score<br><b>${esc(String(cert?.score||"Passed"))}</b></span></div>
+      <p class="small">Issued by SkillCert Hub</p>
+    </div>
+    <button class="cta full" onclick="window.print()">Download / Print Certificate</button>
+    <button class="outline full" onclick="dashboard()">Back to Dashboard</button>
+  </div></div>`);
+}
+function nav(){return `<header class="nav"><button class="brand" onclick="home()">Skill<span>Cert</span> Hub</button><div class="nav-actions">${state.session?`<button class="navbtn" onclick="dashboard()">My Account</button><button class="navbtn" onclick="logout()">Logout</button>`:`<button class="navbtn" onclick="login()">Student Login</button><button class="navbtn primary" onclick="register()">Register</button>`}</div></header>`}
+function shell(body){document.getElementById("app").innerHTML=nav()+`<main class="page">${body}</main><footer>© 2026 SkillCert Hub • IT Skills & Certification<br><span style="display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px"><a href="privacy-policy.html" style="color:var(--primary)">Privacy Policy</a><a href="terms-and-conditions.html" style="color:var(--primary)">Terms &amp; Conditions</a><a href="payment-terms.html" style="color:var(--primary)">Payment Terms</a></span></footer>`}
+function home(){shell(`<section class="hero"><div class="hero-copy"><span class="eyebrow">IT SKILLS • QUIZZES • CERTIFICATES</span><h1>Learn. Test. <span>Get Certified.</span></h1><p>Build job-ready IT knowledge with short online assessments across Data Analytics, Python, SQL, Power BI, Web Development, Cloud, DevOps and Cybersecurity.</p><div class="hero-buttons"><button class="cta" onclick="register()">Start Learning</button><button class="outline" onclick="verify()">Verify Certificate</button></div></div><div class="hero-card"><div class="hero-icon">🎓</div><h2>Professional IT Certification</h2><p>Pass the online assessment and receive your certificate automatically.</p><div class="mini-row"><b>${COURSES.length}</b><span>Courses</span><b>70%</b><span>Default pass</span></div></div></section><section><div class="section-title"><div><span class="eyebrow">CERTIFICATION BUNDLES</span><h2>Choose your course</h2></div></div><div class="course-grid">${COURSES.map(c=>courseCard(c)).join("")}</div></section>`)}
+function courseCard(c){return `<article class="course"><div class="course-top"><span class="course-icon">${c.icon}</span><span class="price">₹${c.price}</span></div><h3>${c.name}</h3><p>${c.desc}</p><div class="course-meta"><span>${c.questions.length}+ questions</span><span>${state.settings.time} min</span></div><button class="course-btn" onclick="selectCourse('${c.id}')">View Course</button></article>`}
+function register(){shell(`<div class="auth"><div class="card"><h1>Create student account</h1><p>Register once to access purchased courses and certificates.</p><form onsubmit="doRegister(event)"><label>Full name<input id="name" required placeholder="Your full name"></label><label>Email<input id="email" type="email" required placeholder="you@example.com"></label><label>Phone<input id="phone" placeholder="Optional"></label><button class="cta full">Create Account</button></form><p class="switch">Already registered? <button onclick="login()">Student Login</button></p></div></div>`)}
+function doRegister(e){e.preventDefault();let email=emailEl().toLowerCase(),name=document.getElementById("name").value.trim();let st=state.students.find(x=>x.email===email);if(!st){st={id:crypto.randomUUID(),name,email,phone:document.getElementById("phone").value,purchases:[],created:new Date().toISOString()};state.students.push(st)}state.session=st.id;save();dashboard()}
+function emailEl(){return document.getElementById("email").value.trim()}
+function login(){shell(`<div class="auth"><div class="card"><h1>Student Login</h1><p>Enter your registered email to continue.</p><form onsubmit="doLogin(event)"><label>Email<input id="email" type="email" required placeholder="you@example.com"></label><button class="cta full">Login</button></form><p class="switch">New student? <button onclick="register()">Create Account</button></p></div></div>`)}
+function doLogin(e){e.preventDefault();let st=state.students.find(x=>x.email===emailEl().toLowerCase());if(!st)return alert("Account not found. Please register first.");state.session=st.id;save();dashboard()}
+function dashboard(){let st=student(),certs=state.certs.filter(x=>x.studentId===st.id);shell(`<div class="dashboard-head"><div><span class="eyebrow">STUDENT DASHBOARD</span><h1>Hello, ${esc(st.name)}</h1><p>${esc(st.email)}</p></div></div><section class="dash-grid"><div class="dash-main"><h2>Your Courses</h2><div class="course-grid">${COURSES.filter(c=>st.purchases.includes(c.id)).map(c=>courseCardOwned(c)).join("")||`<div class="empty"><h3>No courses yet</h3><p>Choose a course below to purchase access.</p><button class="cta" onclick="home()">Browse Courses</button></div>`}</div></div><aside class="side-card"><h3>Certificates</h3>${certs.length?certs.map(c=>`<div class="cert-item"><b>${esc(c.courseName)}</b><span>${c.score}%</span><button onclick="showCert('${c.id}')">View Certificate</button></div>`).join(""):"<p>No certificates yet.</p>"}</aside></section>`)}
+function courseCardOwned(c){return `<article class="course owned"><div class="course-top"><span class="course-icon">${c.icon}</span><span class="badge">Purchased</span></div><h3>${c.name}</h3><p>${c.desc}</p><button class="course-btn" onclick="startQuiz('${c.id}')">Start Quiz</button></article>`}
+function selectCourse(id){let c=COURSES.find(x=>x.id===id),st=state.session?student():null;if(st&&st.purchases.includes(id)){startQuiz(id);return}shell(`<div class="course-detail"><div class="detail-icon">${c.icon}</div><span class="eyebrow">CERTIFICATION COURSE</span><h1>${c.name}</h1><p>${c.desc}</p><div class="detail-box"><b>What you get</b><ul><li>Randomized multiple-choice assessment</li><li>Automatic score calculation</li><li>Certificate after ${state.settings.pass}% pass mark</li><li>Certificate ID verification</li><li>Access from mobile or desktop</li></ul><div class="pay-line"><strong>₹${c.price}</strong><button class="cta" onclick="buy('${c.id}')">Buy & Start Quiz</button></div></div></div>`)}
+function buy(id){if(!state.session){register();return}let c=COURSES.find(x=>x.id===id);showPayment(c)}
+let pendingQuizCourseId=null;
+function showPayment(c){
+  pendingQuizCourseId=c.id;
+  sessionStorage.setItem("pendingQuizCourse",c.id);
+  shell(`<div class="auth"><div class="card payment"><span class="eyebrow">SECURE UPI CHECKOUT</span><h1>${c.icon} ${c.name}</h1><div class="amount">₹${c.price}</div><p>Pay securely using your preferred UPI app.</p><button class="cta full" onclick="openPrivateUPI('${c.id}')">Pay ₹${c.price} via UPI</button><p class="small return-note">After you complete the payment, return to this browser. The quiz will open automatically.</p></div></div>`);
+}
+function completeDemoPayment(e,id){e.preventDefault();let st=student();if(!st.purchases.includes(id))st.purchases.push(id);state.orders.push({id:"ORD-"+Date.now(),studentId:st.id,courseId:id,amount:COURSES.find(c=>c.id===id).price,status:"paid_demo",date:new Date().toISOString()});save();startQuiz(id)}
+let quiz=null,timer=null;
+function startQuiz(id){let c=COURSES.find(x=>x.id===id),qs=[...c.questions].sort(()=>Math.random()-.5).slice(0,state.settings.questions);quiz={course:c,qs,i:0,ans:[],left:state.settings.time*60};renderQuiz();clearInterval(timer);timer=setInterval(()=>{quiz.left--;let el=document.getElementById("timer");if(el)el.textContent=`${Math.floor(quiz.left/60)}:${String(quiz.left%60).padStart(2,"0")}`;if(quiz.left<=0){clearInterval(timer);finishQuiz()}},1000)}
+function renderQuiz(){let q=quiz.qs[quiz.i],sel=quiz.ans[quiz.i];shell(`<div class="quiz"><div class="quizbar"><div><span class="eyebrow">${quiz.course.name}</span><b>Question ${quiz.i+1}/${quiz.qs.length}</b></div><strong id="timer">${Math.floor(quiz.left/60)}:${String(quiz.left%60).padStart(2,"0")}</strong></div><div class="progress"><i style="width:${quiz.i/quiz.qs.length*100}%"></i></div><div class="card quiz-card"><h2>${esc(q[0])}</h2>${q[1].map((o,j)=>`<button class="option ${sel===j?"selected":""}" onclick="answer(${j})">${String.fromCharCode(65+j)}. ${esc(o)}</button>`).join("")}<div class="quiz-actions"><button class="outline" onclick="dashboard()">Exit</button><button class="cta" onclick="nextQ()">${quiz.i===quiz.qs.length-1?"Submit":"Next"}</button></div></div></div>`)}
+function answer(j){quiz.ans[quiz.i]=j;renderQuiz()}
+function nextQ(){if(quiz.ans[quiz.i]===undefined)return alert("Please select an answer.");if(quiz.i<quiz.qs.length-1){quiz.i++;renderQuiz()}else finishQuiz()}
+function finishQuiz(){clearInterval(timer);let correct=quiz.qs.reduce((n,q,i)=>n+(quiz.ans[i]===q[2]?1:0),0),score=Math.round(correct/quiz.qs.length*100),st=student();state.attempts.push({studentId:st.id,courseId:quiz.course.id,score,date:new Date().toISOString()});if(score>=state.settings.pass){let cert={id:"CERT-"+Date.now().toString(36).toUpperCase(),studentId:st.id,courseId:quiz.course.id,courseName:quiz.course.name,score,date:new Date().toISOString()};state.certs.push(cert);save();result(score,cert)}else{save();result(score,null)}}
+function result(score,cert){shell(`<div class="result"><div class="result-icon">${cert?"✓":"!"}</div><h1>${cert?"Congratulations!":"Keep Practicing"}</h1><div class="score">${score}%</div><p>Pass mark: ${state.settings.pass}%</p>${cert?`<p class="success">You passed ${esc(quiz.course.name)}.</p><button class="cta" onclick="showCert('${cert.id}')">View Certificate</button>`:`<p>You did not reach the passing score.</p><button class="cta" onclick="startQuiz('${quiz.course.id}')">Retake Quiz</button>`}<button class="outline" onclick="dashboard()">Dashboard</button></div>`)}
+function showCert(id){let c=state.certs.find(x=>x.id===id),st=studentBy(c.studentId);shell(`<div class="certificate"><div class="cert-brand">SKILL<span>CERT</span> HUB</div><div class="cert-title">Certificate of Achievement</div><p>This certificate is proudly presented to</p><div class="cert-name">${esc(st.name)}</div><p>for successfully passing the</p><h2>${esc(c.courseName)} Certification Assessment</h2><p>Score: <b>${c.score}%</b></p><div class="cert-line"></div><div class="cert-info"><span>Certificate ID<br><b>${c.id}</b></span><span>Date<br><b>${new Date(c.date).toLocaleDateString()}</b></span></div><button class="cta print" onclick="window.print()">Print / Save PDF</button></div>`)}
+function verify(){shell(`<div class="auth"><div class="card"><h1>Verify Certificate</h1><p>Enter the certificate ID.</p><form onsubmit="doVerify(event)"><label>Certificate ID<input id="cid" placeholder="CERT-..." required></label><button class="cta full">Verify</button></form><div id="vr"></div></div></div>`)}
+function doVerify(e){e.preventDefault();let c=state.certs.find(x=>x.id===document.getElementById("cid").value.trim().toUpperCase()),r=document.getElementById("vr");if(!c){r.innerHTML='<p class="error">Certificate not found.</p>';return}let st=studentBy(c.studentId);r.innerHTML=`<div class="verified"><b>✓ Valid Certificate</b><p>Student: ${esc(st.name)}</p><p>Course: ${esc(c.courseName)}</p><p>Score: ${c.score}%</p><p>Issued: ${new Date(c.date).toLocaleDateString()}</p></div>`}
+function student(){return studentBy(state.session)} function studentBy(id){return state.students.find(x=>x.id===id)}
+function logout(){state.session=null;save();home()}
+home();</script><!-- UPI merchant ID is not displayed in the public UI. For true server-side secrecy, use a payment gateway/backend rather than a client-side UPI URI. --><button class="floating-home" onclick="home()" aria-label="Home">⌂</button>
+<script>
+/* SkillCert Hub — MSG91 + Supabase registration integration
+   The MSG91 AuthKey remains server-side in the Supabase Edge Function.
+   Replace the placeholders below with your Supabase project URL and anon key.
+*/
+window.SKILLCERT_CONFIG = {
+  supabaseUrl: "YOUR_SUPABASE_PROJECT_URL",
+  supabaseAnonKey: "YOUR_SUPABASE_ANON_KEY",
+  msg91WidgetId: "366873697a33313031373639",
+  msg91VerifyFunction: "verify-msg91-otp"
+};
+
+async function verifySkillCertMsg91Token(accessToken) {
+  const c = window.SKILLCERT_CONFIG;
+  if (!accessToken) throw new Error("MSG91 verification token missing.");
+  if (c.supabaseUrl.includes("YOUR_") || c.supabaseAnonKey.includes("YOUR_")) {
+    throw new Error("Add your Supabase URL and anon key in SKILLCERT_CONFIG.");
+  }
+  const r = await fetch(c.supabaseUrl + "/functions/v1/" + c.msg91VerifyFunction, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": c.supabaseAnonKey,
+      "Authorization": "Bearer " + c.supabaseAnonKey
+    },
+    body: JSON.stringify({ accessToken })
+  });
+  const data = await r.json();
+  if (!r.ok || !data.verified) throw new Error(data.error || "Mobile verification failed.");
+  return data;
+}
+
+async function createSkillCertStudent(profile) {
+  const c = window.SKILLCERT_CONFIG;
+  const r = await fetch(c.supabaseUrl + "/rest/v1/skillcert_students", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "apikey": c.supabaseAnonKey,
+      "Authorization": "Bearer " + c.supabaseAnonKey,
+      "Prefer": "return=representation"
+    },
+    body: JSON.stringify(profile)
+  });
+  if (!r.ok) {
+    const t = await r.text();
+    throw new Error(t || "Could not create student profile.");
+  }
+  return r.json();
+}
+
+/* Call this from the MSG91 widget success callback:
+   window.skillCertOtpSuccess(data, registrationData)
+*/
+window.skillCertOtpSuccess = async function(data, registrationData) {
+  try {
+    const accessToken =
+      data?.token || data?.accessToken || data?.["access-token"] ||
+      data?.message?.token || data?.message?.accessToken;
+    await verifySkillCertMsg91Token(accessToken);
+
+    const profile = {
+      full_name: registrationData.full_name,
+      email: registrationData.email || null,
+      mobile: registrationData.mobile,
+      mobile_verified: true
+    };
+
+    await createSkillCertStudent(profile);
+    localStorage.setItem("skillcert_student", JSON.stringify(profile));
+    alert("✅ Mobile verified! Your SkillCert Hub account is ready.");
+    if (typeof dashboard === "function") dashboard();
+  } catch (e) {
+    console.error(e);
+    alert("Verification failed: " + e.message);
+  }
+};
+</script>
+
+<script>
+(function(){
+  if (document.getElementById("skillcert-msg91-script")) return;
+  const s=document.createElement("script");
+  s.id="skillcert-msg91-script";
+  s.src="https://verify.msg91.com/otp-provider.js";
+  s.async=true;
+  document.head.appendChild(s);
+})();
+
+window.startSkillCertMobileVerification = function(registrationData) {
+  if (!window.SKILLCERT_MSG91_CLIENT_TOKEN ||
+      window.SKILLCERT_MSG91_CLIENT_TOKEN === "PASTE_MSG91_CLIENT_TOKEN_HERE") {
+    alert("MSG91 is not configured yet. Add the Client Token in skillcert-msg91-config.js.");
+    return;
+  }
+
+  if (!registrationData || !registrationData.mobile || !registrationData.full_name) {
+    alert("Please enter your full name and mobile number.");
+    return;
+  }
+  const configuration = {
+    widgetId: window.SKILLCERT_CONFIG.msg91WidgetId,
+    tokenAuth: window.SKILLCERT_MSG91_CLIENT_TOKEN, // MSG91 CLIENT token only; never put AuthKey here.
+    identifier: registrationData.mobile,
+    exposeMethods: true,
+    success: (data) => window.skillCertOtpSuccess(data, registrationData),
+    failure: (error) => {
+      console.error("MSG91 OTP failure", error);
+      alert("OTP verification failed. Please try again.");
+    }
+  };
+  if (typeof window.initSendOTP === "function") {
+    window.initSendOTP(configuration);
+  } else {
+    alert("MSG91 OTP widget is still loading. Please try again.");
+  }
+};
+</script>
+</body></html>
