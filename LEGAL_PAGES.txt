@@ -1,0 +1,1 @@
+Added pages: privacy-policy.html, terms-and-conditions.html, payment-terms.html. The main SkillCert Hub footer now links to all three pages. Review the templates with your legal/tax advisor before production use.

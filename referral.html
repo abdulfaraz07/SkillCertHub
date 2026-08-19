@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Referral Program | SkillCert Hub</title>
+<style>
+:root{--bg:#07111f;--card:#0e1d2e;--line:#21364e;--text:#f4f7fb;--muted:#9db0c4;--accent:#35d6b0}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#06101d,#0a1828);color:var(--text);font-family:Arial,sans-serif}
+.container{max-width:760px;margin:auto;padding:22px 16px 50px}.nav{display:flex;justify-content:space-between;align-items:center;padding:8px 0 24px}
+.logo{font-size:25px;font-weight:800}.logo span{color:var(--accent)}a{color:inherit;text-decoration:none}
+.card{background:rgba(14,29,46,.96);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:16px;box-shadow:0 12px 30px #0004}
+h1{font-size:32px;margin:10px 0}h2{font-size:20px}.muted{color:var(--muted);line-height:1.6}
+.code{font-size:30px;font-weight:800;letter-spacing:3px;text-align:center;background:#071321;border:1px dashed #3b5773;border-radius:12px;padding:18px;margin:18px 0}
+input{width:100%;padding:14px;border-radius:10px;border:1px solid #38516c;background:#071321;color:white;font-size:16px}
+button{border:0;border-radius:11px;padding:13px 17px;background:var(--accent);color:#04231c;font-weight:800;font-size:15px;cursor:pointer;margin-top:10px}
+.secondary{background:transparent;color:white;border:1px solid #38516c}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{padding:16px;border-radius:12px;background:#091625;border:1px solid var(--line)}.stat b{font-size:24px;display:block;margin-top:5px}
+@media(max-width:600px){.row{grid-template-columns:1fr}.nav{gap:12px}.logo{font-size:21px}h1{font-size:27px}}
+</style>
+</head>
+<body>
+<div class="container">
+<nav class="nav"><a class="logo" href="index.html">Skill<span>Cert</span> Hub</a><a href="index.html">Home</a></nav>
+
+<section class="card">
+<div class="muted">SKILLCERT HUB REFERRAL PROGRAM</div>
+<h1>Invite friends. Grow together.</h1>
+<p class="muted">Share your personal referral link with students. When referral tracking is connected to your account database, successful referrals can be counted automatically.</p>
+
+<h2>Your referral code</h2>
+<div id="refCode" class="code">SKILL-XXXXXX</div>
+<div class="row">
+<div><input id="refLink" readonly></div>
+<div><button onclick="copyReferral()">Copy Referral Link</button></div>
+</div>
+<button class="secondary" onclick="shareReferral()">Share Referral Link</button>
+</section>
+
+<section class="card">
+<h2>Referral dashboard</h2>
+<div class="row">
+<div class="stat"><span class="muted">Successful referrals</span><b id="refCount">0</b></div>
+<div class="stat"><span class="muted">Reward balance</span><b id="reward">₹0</b></div>
+</div>
+<p class="muted">Referral rewards are only credited after your website verifies the required qualifying action/payment. Do not promise a cash reward until you configure the reward amount and verification rules in your backend.</p>
+</section>
+
+<section class="card">
+<h2>How it works</h2>
+<ol class="muted">
+<li>Register/login to SkillCert Hub.</li>
+<li>Open this Referral page and copy your unique link.</li>
+<li>Share it with friends.</li>
+<li>The website records the referral code when a new visitor registers.</li>
+<li>Your backend verifies the qualifying purchase and updates the referral count/reward.</li>
+</ol>
+</section>
+</div>
+<script>
+function getCode(){
+  let code=localStorage.getItem("skillcert_referral_code");
+  if(!code){
+    const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    let s=""; for(let i=0;i<6;i++) s+=chars[Math.floor(Math.random()*chars.length)];
+    code="SKILL-"+s;
+    localStorage.setItem("skillcert_referral_code",code);
+  }
+  return code;
+}
+const code=getCode();
+document.getElementById("refCode").textContent=code;
+const link=location.origin+location.pathname.replace(/referral\.html$/,"")+"index.html?ref="+encodeURIComponent(code);
+document.getElementById("refLink").value=link;
+
+const params=new URLSearchParams(location.search);
+if(params.get("ref")) localStorage.setItem("skillcert_pending_referral",params.get("ref"));
+
+async function copyReferral(){
+  await navigator.clipboard.writeText(document.getElementById("refLink").value);
+  alert("Referral link copied.");
+}
+async function shareReferral(){
+  const data={title:"SkillCert Hub",text:"Join SkillCert Hub using my referral link:",url:document.getElementById("refLink").value};
+  if(navigator.share) await navigator.share(data); else copyReferral();
+}
+</script>
+</body>
+</html>
